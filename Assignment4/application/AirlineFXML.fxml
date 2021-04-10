@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AirlineController">
+   <children>
+      <Label layoutX="311.0" layoutY="42.0" prefHeight="18.0" prefWidth="178.0" text="Airline Information System" textFill="#fa0000">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="52.0" layoutY="82.0" text="Choose Search option" />
+      <RadioButton fx:id="rbAirline" layoutX="194.0" layoutY="82.0" mnemonicParsing="false" onAction="#airlineSelected" text="Airline" />
+      <RadioButton fx:id="rbAirlineNo" layoutX="268.0" layoutY="82.0" mnemonicParsing="false" onAction="#airlineNoSelected" text="Airline Number" />
+      <RadioButton fx:id="rbDeptAirport" layoutX="402.0" layoutY="82.0" mnemonicParsing="false" onAction="#deptSelected" text="Departure Airport " />
+      <RadioButton fx:id="rbArrAirport" layoutX="565.0" layoutY="82.0" mnemonicParsing="false" onAction="#arrSelected" text="Arrival Airport" />
+      <Label layoutX="52.0" layoutY="142.0" text="Airline" />
+      <Label layoutX="39.0" layoutY="247.0" text="Departure Airport" />
+      <Label layoutX="46.0" layoutY="196.0" text="Airline Number" />
+      <Label layoutX="39.0" layoutY="304.0" text="Arrival Airport" />
+      <ChoiceBox fx:id="cbAirline" layoutX="193.0" layoutY="138.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="cbAirlineNo" layoutX="193.0" layoutY="192.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="cbDeptAirport" layoutX="193.0" layoutY="243.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="cbArrAirport" layoutX="193.0" layoutY="300.0" prefWidth="150.0" />
+      <Button fx:id="btnSearch" layoutX="117.0" layoutY="394.0" mnemonicParsing="false" onAction="#onSearchClicked" text="Search" />
+      <Button fx:id="btnClose" layoutX="216.0" layoutY="394.0" mnemonicParsing="false" onAction="#onCloseClicked" text="Close" />
+      <TableView fx:id="airlineTableView" layoutX="360.0" layoutY="138.0" prefHeight="322.0" prefWidth="430.0">
+        <columns>
+          <TableColumn fx:id="airlineColumn" prefWidth="84.800048828125" text="Airline" />
+          <TableColumn fx:id="airlineNoColumn" prefWidth="112.79998779296875" text="Airline Number" />
+            <TableColumn fx:id="deptColumn" prefWidth="111.99993896484375" text="Departure Airport" />
+            <TableColumn fx:id="arrColumn" prefWidth="116.7999267578125" text="Arrival Airport" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
