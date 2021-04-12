@@ -22,10 +22,14 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
 
 public class AirlineController implements Initializable{
-   
+
+    @FXML
+    private ToggleGroup togglegr;
+    
     @FXML
     private RadioButton rbAirline;
 
@@ -138,10 +142,6 @@ public class AirlineController implements Initializable{
     		if(cbAirline.getItems().size()<=0)
     		cbAirline.getItems().addAll(airlineList);
     		
-    		rbAirlineNo.setSelected(false);
-    		rbDeptAirport.setSelected(false);
-    		rbArrAirport.setSelected(false);
-    		
     		cbAirline.setDisable(false);
     		cbArrAirport.setDisable(true);
     		cbDeptAirport.setDisable(true);
@@ -166,10 +166,6 @@ public class AirlineController implements Initializable{
     		selectedChoiceBox=2;
     		if(cbAirlineNo.getItems().size()<=0)
     		cbAirlineNo.getItems().addAll(airlineNoList);
-    		
-    		rbAirline.setSelected(false);
-    		rbDeptAirport.setSelected(false);
-    		rbArrAirport.setSelected(false);
     		
     		cbAirlineNo.setDisable(false);
     		cbAirline.setDisable(true);
@@ -197,11 +193,7 @@ public class AirlineController implements Initializable{
     		
     		if(cbDeptAirport.getItems().size()<=0)
     		cbDeptAirport.getItems().addAll(deptList);
-    		
-    		rbAirlineNo.setSelected(false);
-    		rbAirline.setSelected(false);
-    		rbArrAirport.setSelected(false);
-    		
+    	
     		cbDeptAirport.setDisable(false);
     		cbAirline.setDisable(true);
     		cbArrAirport.setDisable(true);
@@ -226,10 +218,6 @@ public class AirlineController implements Initializable{
     		
     		if(cbArrAirport.getItems().size()<=0)
     		cbArrAirport.getItems().addAll(arrList);
-    		
-    		rbAirlineNo.setSelected(false);
-    		rbAirline.setSelected(false);
-    		rbDeptAirport.setSelected(false);
     		
     		cbArrAirport.setDisable(false);
     		cbAirline.setDisable(true);
@@ -306,8 +294,8 @@ public class AirlineController implements Initializable{
     		{
     			if(airArray.get(i).getArrAirport().equals(a))
     			{
-    				tableData.add(new AirlineTable(airArray.get(i).getAirline(),airArray.get(i).getAirlineNo(),airArray.get(i).getArrAirport(),
-    						airArray.get(i).getDeptAirport()));
+    				tableData.add(new AirlineTable(airArray.get(i).getAirline(),airArray.get(i).getAirlineNo(),airArray.get(i).getDeptAirport(),
+    						airArray.get(i).getArrAirport()));
     			}
     		}
     		break;

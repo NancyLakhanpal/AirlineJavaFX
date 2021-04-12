@@ -6,6 +6,7 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -17,10 +18,13 @@
          </font>
       </Label>
       <Label layoutX="52.0" layoutY="82.0" text="Choose Search option" />
-      <RadioButton fx:id="rbAirline" layoutX="194.0" layoutY="82.0" mnemonicParsing="false" onAction="#airlineSelected" text="Airline" />
-      <RadioButton fx:id="rbAirlineNo" layoutX="268.0" layoutY="82.0" mnemonicParsing="false" onAction="#airlineNoSelected" text="Airline Number" />
-      <RadioButton fx:id="rbDeptAirport" layoutX="402.0" layoutY="82.0" mnemonicParsing="false" onAction="#deptSelected" text="Departure Airport " />
-      <RadioButton fx:id="rbArrAirport" layoutX="565.0" layoutY="82.0" mnemonicParsing="false" onAction="#arrSelected" text="Arrival Airport" />
+      <RadioButton fx:id="rbAirline" layoutX="194.0" layoutY="82.0" mnemonicParsing="false" onAction="#airlineSelected" text="Airline">
+         <toggleGroup>
+            <ToggleGroup fx:id="togglegr" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="rbAirlineNo" layoutX="268.0" layoutY="82.0" mnemonicParsing="false" onAction="#airlineNoSelected" text="Airline Number" toggleGroup="$togglegr" />
+      <RadioButton fx:id="rbDeptAirport" layoutX="402.0" layoutY="82.0" mnemonicParsing="false" onAction="#deptSelected" text="Departure Airport " toggleGroup="$togglegr" />
+      <RadioButton fx:id="rbArrAirport" layoutX="565.0" layoutY="82.0" mnemonicParsing="false" onAction="#arrSelected" text="Arrival Airport" toggleGroup="$togglegr" />
       <Label layoutX="52.0" layoutY="142.0" text="Airline" />
       <Label layoutX="39.0" layoutY="247.0" text="Departure Airport" />
       <Label layoutX="46.0" layoutY="196.0" text="Airline Number" />
